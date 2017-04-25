@@ -1,0 +1,7 @@
+<h1>Payment Result</h1>
+
+<p>The month payment of
+    basis point = <%= @user_provided_bp %> , number of years = <%= @user_provided_years %> , pv = <%= @user_provided_pv %>
+  is
+  <%= number_to_currency(@monthly_payment) %>
+</p>
