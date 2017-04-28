@@ -52,7 +52,7 @@ end
 
 def square_root
   @user_provided_number = params["number_to_be_rooted"].to_f
-  @squared_root_number = Math.sqrt(@user_provided_number).round(2)
+  @squared_root_number = Math.sqrt(@user_provided_number).round(3)
 
 render("calculation/square_root.html.erb")
 end
@@ -66,7 +66,7 @@ def payment
   @user_provided_years = params["user_years"].to_f
   @user_provided_pv = params["user_pv"].to_f
 
-@monthly_payment = ((@user_provided_bp / 12 / 100 / 100 * @user_provided_pv) / (1 - ((1 + @user_provided_bp / 12 / 100 / 100) ** ((-1) * @user_provided_years * 12)))).round(2)
+@monthly_payment = ((@user_provided_bp / 12 / 100 * @user_provided_pv) / (1 - ((1 + @user_provided_bp / 12 / 100) ** ((-1) * @user_provided_years * 12)))).round(2)
 
 render("calculation/payment.html.erb")
 
